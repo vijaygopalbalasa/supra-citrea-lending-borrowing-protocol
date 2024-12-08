@@ -506,7 +506,7 @@ export default function Dashboard() {
                     </div>
                 </div>
             </header>
-
+        
             <main className="max-w-7xl mx-auto px-4 py-8 space-y-4">
                 {/* Stats Overview */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
@@ -551,7 +551,7 @@ export default function Dashboard() {
                         </motion.div>
                     ))}
                 </div>
-
+              
                 {/* Live Price Feed Card */}
                 <div className="mt-8">
                     <div className="bg-white rounded-xl shadow-sm p-6">

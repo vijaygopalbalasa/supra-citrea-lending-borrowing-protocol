@@ -6,10 +6,10 @@ import { DollarSign, TrendingUp, Shield, PieChart, ArrowUpRight, ArrowDownRight,
 
 export default function Dashboard() {
     console.log("Dashboard component rendered");
-    const [network, setNetwork] = useState<'supra' | 'citrea'>('supra')
+    const [network, setNetwork] = useState<'supra'>('supra')
     const [isConnected, setIsConnected] = useState(false)
 
-    const getNetworkStyles = (network: 'supra' | 'citrea') => ({
+    const getNetworkStyles = (network: 'supra') => ({
         background: network === 'supra' ? 'bg-red-600' : 'bg-orange-500',
         text: network === 'supra' ? 'text-red-600' : 'text-orange-500',
         lighter: network === 'supra' ? 'bg-red-50' : 'bg-orange-50',
@@ -29,14 +29,7 @@ export default function Dashboard() {
                                 className={`px-4 py-2 rounded-lg ${network === 'supra' ? 'bg-red-600 text-white' : 'bg-gray-100'
                                     }`}
                             >
-                                Supra
-                            </button>
-                            <button
-                                onClick={() => setNetwork('citrea')}
-                                className={`px-4 py-2 rounded-lg ${network === 'citrea' ? 'bg-orange-500 text-white' : 'bg-gray-100'
-                                    }`}
-                            >
-                                Citrea
+                                SUPRA Network
                             </button>
                         </div>
                         <button

@@ -24,14 +24,10 @@ export default function Home() {
     return 'text-citrea-primary'
   }
 
-  const handleDashboard = async () => {
-    try {
-      await router.push('/dashboard');
-      console.log("Going to dashboard")
-    } catch (error) {
-      console.log(error);
-    }
+  const handleDashboard = (network: 'supra' | 'citrea') => {
+    router.push(network === 'supra' ? '/dashboard' : '/citrea')
   }
+
 
   return (
     <div className="min-h-screen">
@@ -90,18 +86,29 @@ export default function Home() {
             </h1>
 
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Earn 8% APY on your stablecoins and borrow against your meme tokens.
+              Earn 8% APY on your stablecoins and borrow against your Crypto Assets.
               Simple, secure, and efficient lending.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.button onClick={handleDashboard}
+              <motion.button
+                onClick={() => handleDashboard('supra')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-8 py-4 rounded-xl font-medium text-white shadow-xl
-                  flex items-center gap-2 ${getNetworkColor('gradient')}`}
+                className="px-8 py-4 rounded-xl font-medium bg-red-600 text-white shadow-xl
+              flex items-center gap-2"
               >
-                Launch App <ArrowRight className="h-5 w-5" />
+                Launch Supra <ArrowRight className="h-5 w-5" />
+              </motion.button>
+
+              <motion.button
+                onClick={() => handleDashboard('citrea')}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 rounded-xl font-medium bg-orange-500 text-white shadow-xl
+              flex items-center gap-2"
+              >
+                Launch Citrea <ArrowRight className="h-5 w-5" />
               </motion.button>
 
               <motion.button

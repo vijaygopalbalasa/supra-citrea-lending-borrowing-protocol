@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ArrowRight, Wallet, LineChart, TrendingUp, Users, DollarSign, Shield, Zap, Lock, RefreshCw, ChevronRight, Github, Twitter } from 'lucide-react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
@@ -11,7 +11,6 @@ export default function Home() {
   const [network, setNetwork] = useState<'supra' | 'citrea'>('supra')
   const [activeTab, setActiveTab] = useState('home')
   const router = useRouter()
-
 
   const getNetworkColor = (type: 'primary' | 'gradient' | 'soft' = 'primary') => {
     if (network === 'supra') {
@@ -23,6 +22,7 @@ export default function Home() {
     if (type === 'soft') return 'bg-citrea-soft'
     return 'text-citrea-primary'
   }
+
 
   const handleDashboard = (network: 'supra' | 'citrea') => {
     router.push(network === 'supra' ? '/dashboard' : '/citrea')
